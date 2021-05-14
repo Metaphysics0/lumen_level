@@ -1,0 +1,19 @@
+table {
+  border-collapse: collapse;
+  background: #fff;
+  margin: 0 auto;
+  width: 90%;
+  td,
+  th {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 1.25rem;
+  }
+}
+table tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
+}
