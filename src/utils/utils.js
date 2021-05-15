@@ -1,6 +1,17 @@
 // Check if token is still valid
+// Returns true if token is null/expired
+// Returns false if token is still valid
 const hasTokenExpired = (time) => {
-  return time + 36000 > Date.now();
+  if (time) {
+    return time + 36000 < Date.now();
+  }
+  return true;
 };
 
-export { hasTokenExpired };
+// Convert MM/DD/YYYY to YYYY-MM-DD format
+const formatDate = (date) => {
+  const split = date.split('/');
+  return [split[2], split[0], split[1]].join('-');
+};
+
+export { hasTokenExpired, formatDate };
