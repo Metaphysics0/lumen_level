@@ -5,6 +5,6 @@ Data points include Date/Time, Session Type, and Lumen Level
 
 ### Technologies Used
 
-- React
-- SCSS
-- Lumen API
+- React ⚛️
+- SCSS 💅
+- Lumen API 👩‍⚕️

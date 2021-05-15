@@ -1,19 +1,41 @@
+// Table.jsx
 table {
+  @include center-item;
   border-collapse: collapse;
   background: #fff;
-  margin: 0 auto;
   width: 90%;
+  border-radius: 10px;
+  font-size: 1.35rem;
+  box-shadow: var(--shadow-dreamy);
+  margin-bottom: 5rem;
   td,
   th {
-    border: 1px solid #ddd;
+    border-radius: 10px;
     text-align: left;
     padding: 1.25rem;
+    border: 1px solid #ddd;
   }
-}
-table tr:last-child td:first-child {
-  border-bottom-left-radius: 10px;
-}
-
-table tr:last-child td:last-child {
-  border-bottom-right-radius: 10px;
+  thead {
+    border-radius: 10px;
+    tr {
+      th {
+        border-left: none;
+        &:last-child {
+          border-right: none;
+        }
+        border-top: none;
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        border-left: none;
+        &:last-child {
+          border-right: none;
+        }
+        border-bottom: none;
+      }
+    }
+  }
 }
