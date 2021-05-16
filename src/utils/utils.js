@@ -14,4 +14,14 @@ const formatDate = (date) => {
   return [split[2], split[0], split[1]].join('-');
 };
 
-export { hasTokenExpired, formatDate };
+// Emojis
+const emojis = {
+  Bedtime: '😴',
+  Fasting: '🙅',
+  PostWorkout: '💪🏻',
+  PostMeal: '🍽',
+  PreMeal: '🍱',
+  PreWorkout: '🏋🏻‍♀️',
+};
+
+export { hasTokenExpired, formatDate, emojis };

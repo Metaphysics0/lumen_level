@@ -1,6 +1,7 @@
 // Variables!
 
 :root {
+  --color-blue: rgb(0, 212, 255);
   --bg-light: rgb(134, 241, 255);
   --bg-dark: rgb(2, 0, 36);
   --gradient-light: linear-gradient(305deg, rgba(134, 241, 255, 1) 0%, rgba(0, 212, 255, 1) 100%);
@@ -16,4 +17,5 @@
   --shadow-smooth: 0 1px 1px rgba(0, 0, 0, 0.08), 0 2px 2px rgba(0, 0, 0, 0.12),
     0 4px 4px rgba(0, 0, 0, 0.16), 0 8px 8px rgba(0, 0, 0, 0.2);
   --shadow-smooth-light: 0 1px 1px rgba(0, 0, 0, 0.08);
+  --shadow-nav: 0 1px 6px rgba(32, 33, 36, 0.28);
 }

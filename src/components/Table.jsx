@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { data } from '../sample';
+import { emojis } from '../utils/utils';
 
 const Table = ({ results }) => {
-  const [table, setTable] = useState([]);
+  const [table, setTable] = useState(results || []);
   const [sortType, setSortType] = useState('sessionType');
 
-  // Sort by menu
+  // 'Sort By' dropdown menu
   useEffect(() => {
     const sortTable = (type) => {
       const types = {
@@ -24,30 +25,34 @@ const Table = ({ results }) => {
 
   return (
     <>
-      <select onChange={(e) => setSortType(e.target.value)}>
-        <option defaultValue="Sort by" disabled={true}>
-          Sort by
-        </option>
-        <option value="sessionType">Session Type</option>
-        <option value="date">Date</option>
-        <option value="lumenLevel">Lumen Level</option>
-      </select>
+      <label className="select">
+        <span> Sort By:</span>
+        <select onChange={(e) => setSortType(e.target.value)}>
+          <option defaultValue="Sort by" disabled={true}>
+            Sort by
+          </option>
+          <option value="sessionType">Session Type</option>
+          <option value="date">Date</option>
+          <option value="lumenLevel">Lumen Level</option>
+        </select>
+      </label>
       <table>
         <thead>
           <tr>
             <th>Date and Time 🕑</th>
             <th>Session Type</th>
-            <th>Lumen Level 😇</th>
+            <th>Lumen Level ❤️</th>
           </tr>
         </thead>
         <tbody>
-          {/* {table.map((item) => (
-            <tr key={item.sessionId}>
-              <td>{item.date}</td>
-              <td>{item.sessionType}</td>
-              <td>{item.lumenLevel}</td>
-            </tr>
-          ))} */}
+          {table &&
+            table.map((item) => (
+              <tr key={item.sessionId}>
+                <td>{item.date}</td>
+                <td>{item.sessionType + ' ' + emojis[item.sessionType]}</td>
+                <td>{item.lumenLevel}</td>
+              </tr>
+            ))}
         </tbody>
       </table>
     </>
