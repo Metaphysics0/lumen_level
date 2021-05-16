@@ -18,6 +18,7 @@ const formatDate = (date) => {
 const emojis = {
   Bedtime: '😴',
   Fasting: '🙅',
+  IntermittentFasting: '⏳',
   PostWorkout: '💪🏻',
   PostMeal: '🍽',
   PreMeal: '🍱',

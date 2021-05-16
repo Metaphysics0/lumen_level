@@ -10,6 +10,10 @@
   align-items: center;
   justify-content: space-between;
   box-shadow: var(--shadow-nav);
+  @media only screen and (max-width: 55em) {
+    border-radius: 0;
+    padding: 1.5rem;
+  }
   &__left {
     display: flex;
     align-items: center;

@@ -50,7 +50,7 @@ const getResults = async (token) => {
           },
         }
       );
-      return response;
+      return response.data;
     } catch (e) {
       console.error('Error getting results', e);
     }

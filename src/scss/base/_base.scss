@@ -16,6 +16,9 @@
 html {
   font-size: 62.5%; // 1rem == 10px
   box-sizing: border-box;
+  @media only screen and (max-width: 55em) {
+    font-size: 55%;
+  }
 }
 
 body {
@@ -29,6 +32,9 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
+  @media only screen and (max-width: 55em) {
+    padding: 0;
+  }
 }
 
 ::selection {

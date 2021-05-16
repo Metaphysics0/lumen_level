@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { data } from '../sample';
 import { emojis } from '../utils/utils';
 
-const Table = ({ results }) => {
-  const [table, setTable] = useState(results || []);
+const Table = ({ results, setResults }) => {
   const [sortType, setSortType] = useState('sessionType');
 
   // 'Sort By' dropdown menu
@@ -15,10 +13,12 @@ const Table = ({ results }) => {
         sessionType: 'sessionType',
       };
       const sortProperty = types[type];
-      const sorted = [...data].sort((a, b) =>
-        a[sortProperty] > b[sortProperty] ? 1 : b[sortProperty] > a[sortProperty] ? -1 : 0
-      );
-      setTable(sorted);
+      const sorted =
+        results &&
+        [...results].sort((a, b) =>
+          a[sortProperty] > b[sortProperty] ? 1 : b[sortProperty] > a[sortProperty] ? -1 : 0
+        );
+      setResults(sorted);
     };
     sortTable(sortType);
   }, [sortType]);
@@ -40,13 +40,13 @@ const Table = ({ results }) => {
         <thead>
           <tr>
             <th>Date and Time 🕑</th>
-            <th>Session Type</th>
+            <th>Session Type 🗓</th>
             <th>Lumen Level ❤️</th>
           </tr>
         </thead>
         <tbody>
-          {table &&
-            table.map((item) => (
+          {results &&
+            results.map((item) => (
               <tr key={item.sessionId}>
                 <td>{item.date}</td>
                 <td>{item.sessionType + ' ' + emojis[item.sessionType]}</td>
