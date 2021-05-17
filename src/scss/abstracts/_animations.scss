@@ -1,4 +1,4 @@
-// Loading
+// Loading Animation
 
 .loading:after {
   overflow: hidden;
@@ -6,7 +6,7 @@
   vertical-align: bottom;
   -webkit-animation: ellipsis steps(4, end) 900ms infinite;
   animation: ellipsis steps(4, end) 900ms infinite;
-  content: '\2026'; /* ascii code for the ellipsis character */
+  content: '\2026'; // ascii code for the ellipsis character
   width: 0px;
 }
 

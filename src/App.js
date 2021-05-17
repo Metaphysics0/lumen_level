@@ -14,7 +14,6 @@ function App() {
   const handleSubmit = async () => {
     try {
       const responseToken = await getToken();
-      console.log('TOKEN ', responseToken);
       const response = await getResults(responseToken);
       setResults(response.data);
       return response;
