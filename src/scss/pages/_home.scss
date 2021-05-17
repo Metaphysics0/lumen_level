@@ -19,6 +19,14 @@
     font-weight: 300;
     text-shadow: var(--shadow-smooth);
   }
+  &__info {
+    display: flex;
+    color: #fff;
+    font-weight: 600;
+    font-size: 2rem;
+    width: 50rem;
+    justify-content: space-around;
+  }
   &__btn {
     width: fit-content;
     padding: 1.25rem 2.25rem;
