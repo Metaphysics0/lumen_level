@@ -10,7 +10,7 @@ const Navbar = () => {
           className="nav__img"
         />
         <a href="https://www.lumen.me/" target="_blank" rel="noreferrer" className="nav__logo">
-          Lumen
+          Lumen API
         </a>
       </div>
       <ul className="nav__links">

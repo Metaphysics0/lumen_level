@@ -35,7 +35,7 @@ const getToken = async () => {
 
 // Gets results from last 30 days
 const getResults = async (token) => {
-  if (hasTokenExpired(token.idToken)) {
+  if (!hasTokenExpired(token.time)) {
     const d = new Date();
     const today = d.toLocaleDateString();
     const lastMonth = new Date(d.setMonth(d.getMonth() - 1)).toLocaleDateString();
@@ -46,7 +46,7 @@ const getResults = async (token) => {
         )}&toDate=${formatDate(today)}`,
         {
           headers: {
-            authorization: token,
+            authorization: token.idToken,
           },
         }
       );
